@@ -10,3 +10,16 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.navbar .btn-primary {
+  border-radius: 25px;
+  padding: 8px;
+  width: 200px;
+  color: #fff;
+  font-size: 16px;
+  margin: auto;
+  background: linear-gradient(to right, #1d2365, #6c63ff, #1d2365);
+  &:hover {
+    background: linear-gradient(90deg, rgba(2,0,36,0.5704656862745099) 22%, rgba(125,154,182,0.6096813725490196) 63%, rgba(0,212,255,1) 100%);
+  }
+}

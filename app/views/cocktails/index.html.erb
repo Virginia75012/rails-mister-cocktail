@@ -1,0 +1,23 @@
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1551024709-8f23befc6f87?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1425&q=80);">
+  <div class="container">
+    <h1>All our Cocktails</h1>
+    <p>Discorver our best selection of cocktails !</p>
+  </div>
+</div>
+
+<div class="container mt-3">
+  <div class="row">
+    <div class="d-flex inline flex-wrap">
+      <% @cocktails.each do |cocktail| %>
+      <div class="card" style="width: 20rem;">
+        <img class="card-img-top" src="https://loremflickr.com/g/320/240/cocktail" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"><%= cocktail.name %></h5>
+          <%= link_to "See details", cocktail_path(cocktail), class: "btn btn-primary" %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
