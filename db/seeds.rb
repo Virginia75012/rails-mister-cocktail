@@ -1,10 +1,17 @@
+require 'open-uri'
+require 'json'
+
+Dose.destroy_all
+Cocktail.destroy_all
 Ingredient.destroy_all
 
-Ingredient.create(name: "lemon")
-Ingredient.create(name: "ice")
-Ingredient.create(name: "mint leaves")
+puts 'Create'
 
-Cocktail.create(name: "Mojito")
-Cocktail.create(name: "Tequila Sunrise")
-Cocktail.create(name: "Irish Coffe")
-
+url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
+json = open(url).read
+ingredients = JSON.parse(json)
+new_ingredients = ingredients['drinks']
+new_ingredients.each do |ingredient|
+  Ingredient.create(name: ingredient['strIngredient1'])
+end
+puts 'Finished !'
